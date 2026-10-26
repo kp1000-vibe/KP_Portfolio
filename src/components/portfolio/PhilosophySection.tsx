@@ -1,7 +1,7 @@
 import { SectionHeader } from "./SectionHeader";
 import { ScrollReveal } from "./ScrollReveal";
 import { PhilosophyCard } from "./PhilosophyCard";
-import { Compass, Gauge, Network, Zap } from "lucide-react";
+import { Atom, Compass, Gauge, Network, Zap } from "lucide-react";
 
 export function PhilosophySection() {
   return (
@@ -17,12 +17,13 @@ export function PhilosophySection() {
         
         <div className="grid md:grid-cols-2 gap-4 mb-16">
           {[
+            { icon: Atom, title: "First Principles Thinking", description: "I break a problem down to what is actually true before deciding what to build. That means separating real constraints, such as user needs, data, cost and technical limits, from assumptions inherited from how things have always been done. In agentic AI many accepted patterns are only months old, so I rebuild the reasoning from fundamentals instead of copying what others shipped.", wide: true },
             { icon: Compass, title: "Strategic Clarity Over Feature Velocity", description: "I invest heavily in problem framing before solution design. The best product decisions I've made came from asking 'what would have to be true?' rather than 'what should we build?' When I join a problem space, I map the system first—user segments, data flows, organizational incentives, competitive dynamics. Speed comes from clarity, not from rushing." },
             { icon: Gauge, title: "Optimize for Leverage, Not Output", description: "I measure my impact by what I enable others to do, not just what I ship. Building a prioritization framework that prevents 50 future debates is more valuable than shipping one more feature. I ask: 'If I solve this once, how many times does it pay dividends?' This compounds over careers." },
             { icon: Network, title: "Influence Architecture", description: "At senior level, most of my impact comes through people I don't manage. I build trust by being genuinely useful—bringing structured thinking to ambiguous problems, creating artifacts that unlock decisions, and making other teams' work easier. Authority follows influence, not the other way around." },
             { icon: Zap, title: "Reversible vs. Irreversible Thinking", description: "I categorize decisions by their reversibility. For reversible decisions, I bias toward action and fast feedback loops—we'll learn more from trying than from debating. For irreversible decisions, I invest heavily in framing and stakeholder alignment. Most debates are really about which category a decision belongs to." },
           ].map((item, i) => (
-            <ScrollReveal key={item.title} delay={i * 0.1}>
+            <ScrollReveal key={item.title} delay={i * 0.1} className={"wide" in item ? "md:col-span-2" : undefined}>
               <PhilosophyCard icon={item.icon} title={item.title} description={item.description} />
             </ScrollReveal>
           ))}

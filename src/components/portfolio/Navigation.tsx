@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, X, Activity } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -33,19 +33,7 @@ export function Navigation() {
       )}
     >
       <div className="section-container">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* OS-style branding */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-muted/50 border border-border/50 group-hover:border-primary/50 transition-colors">
-              <div className="status-dot status-dot--online" />
-              <span className="font-mono text-xs font-medium text-foreground">kunal.os</span>
-            </div>
-            <span className="hidden md:inline-flex items-center gap-1.5 text-xs text-muted-foreground font-mono">
-              <Activity className="h-3 w-3 text-primary" />
-              v15.0 — active
-            </span>
-          </a>
-
+        <div className="flex items-center justify-end h-16 md:h-20">
           {/* Desktop nav — system tabs */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
